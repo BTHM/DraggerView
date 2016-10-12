@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/consultant"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:id="@+id/consultant_title"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/colorWhite">
+
+        <ImageView
+            android:id="@+id/imageViewConsultant"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:src="@mipmap/consultant_icon"/>
+
+        <TextView
+            style="@style/textStyleHomeButtonTextTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="3dp"
+            android:layout_toRightOf="@+id/imageViewConsultant"
+            android:text="今日投顾"/>
+
+        <ImageView
+            android:id="@+id/imageButtonMoreConsultant"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:background="#fff"
+            android:src="@mipmap/indicator_icon"/>
+    </RelativeLayout>
+
+    <GridView
+        android:id="@+id/gridviewConsultant"
+        android:layout_width="match_parent"
+        android:layout_height="176dp"
+        android:layout_marginTop="0.5dp"
+        android:background="@color/colorBackgroudLight"
+        android:numColumns="2">
+
+    </GridView>
+</LinearLayout>

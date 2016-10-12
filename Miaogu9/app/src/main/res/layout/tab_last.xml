@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="179dp"
+    android:layout_marginBottom="10dp"
+    android:layout_marginTop="10dp"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:id="@+id/home_finance_title"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+
+        android:background="@color/colorWhite">
+
+        <ImageView
+            android:id="@+id/imageViewFinanceIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:src="@mipmap/home_finance_icon" />
+
+        <TextView
+            style="@style/textStyleHomeButtonTextTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="3dp"
+            android:layout_toRightOf="@+id/imageViewFinanceIcon"
+            android:text="特色活动" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:background="#fff"
+            android:src="@mipmap/indicator_icon" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutFinaceItem"
+        android:layout_width="match_parent"
+        android:layout_height="139dp"
+        android:layout_marginTop="1dp">
+
+        <ImageView
+            android:id="@+id/imageViewFinance"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@mipmap/banner_loading_home" />
+
+    </RelativeLayout>
+</LinearLayout>

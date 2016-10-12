@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:id="@+id/activity_adviser_detail"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context=".ui.AdviserDetailActivity">
+
+    <include layout="@layout/tab_toolbar"></include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackgroudLight"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/layoutAsk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/iv_ask"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@mipmap/ask_icon"/>
+
+                <TextView
+                    android:id="@+id/tv_ask_title"
+                    style="@style/textStyleAdviserAskText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="left|center_vertical"
+                    android:text="光线传媒,可以持仓吗?"/>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/iv_bar"
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="29dp"
+                android:layout_marginTop="10dp"
+                android:background="#e4e4e4"/>
+
+            <LinearLayout
+                android:id="@+id/layoutAnswer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="18.5dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/iv_answer"
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:layout_below="@+id/iv_ask"
+                        android:layout_marginLeft="10dp"
+                        android:src="@mipmap/answer_icon"/>
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        style="@style/textStyleAdviserConsultantText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="李大霄"/>
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="11dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="7dp"
+                        android:layout_marginRight="7dp"
+                        android:background="#5c7997">
+
+                    </View>
+
+                    <TextView
+                        android:id="@+id/tv_company"
+                        style="@style/textStyleAdviserConsultantText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/iv_answer"
+                        android:text="中信证券"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_answer"
+                    style="@style/textStyleAdviserAnswerText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="29dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="3.5dp"
+                    android:text="短线可以考虑。短线可以考虑。短线可以考虑。短线可以考虑。短线可以考虑。短线可以考虑。"/>
+
+                <TextView
+                    android:id="@+id/tv_time"
+                    style="@style/textStyleAdviserTimeText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="29dp"
+                    android:layout_marginTop="3.5dp"
+                    android:text="2016-07-27 04:39:46"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/layoutGuess"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="invisible">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6.5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginTop="6.5dp"
+                    android:src="@mipmap/icon_guess"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="猜你喜欢"
+                    android:textColor="#626262"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/listViewGuess"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </ListView>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

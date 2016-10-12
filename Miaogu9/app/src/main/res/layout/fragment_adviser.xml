@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <win99.com.miaogu9.pull2refresh.PullToRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/refresh_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible">
+
+        <win99.com.miaogu9.pull2refresh.PullableScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include layout="@layout/tab_adviser_first"></include>
+
+                <include layout="@layout/tab_adviser_second"></include>
+
+                <include layout="@layout/tab_adviser_third"></include>
+
+
+                <include layout="@layout/tab_adviser_buttom"></include>
+
+            </LinearLayout>
+        </win99.com.miaogu9.pull2refresh.PullableScrollView>
+    </win99.com.miaogu9.pull2refresh.PullToRefreshLayout>
+
+    <include layout="@layout/page_error"></include>
+</FrameLayout>

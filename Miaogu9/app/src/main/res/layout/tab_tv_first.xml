@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--视频标题,分布时间-->
+    <RelativeLayout
+        android:background="@color/colorWhite"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+
+        <TextView
+            style="@style/textStyleAdviserAskText"
+            android:id="@+id/tv_play_title"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="13dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="13dp"
+            android:layout_width="match_parent"
+            android:text="蓝筹股今日操作技法刘军：建立减持预披露制新规近日公布"/>
+
+        <TextView
+            style="@style/textStyleAdviserTimeText"
+            android:id="@+id/tv_play_time"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/tv_play_title"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="wrap_content"
+            android:text="10分钟前"/>
+    </RelativeLayout>
+    <!--评论数,观看数-->
+    <RelativeLayout
+        android:background="@color/colorWhite"
+        android:gravity="center_vertical"
+        android:layout_height="50dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent">
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:background="#00000000"
+                android:focusable="false"
+                android:id="@+id/ib_tv_good"
+                android:layout_height="28dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="3dp"
+                android:layout_width="28dp"
+                android:src="@mipmap/praise_icon"/>
+
+            <TextView
+                style="@style/textStyleAdviserConsultantText"
+                android:id="@+id/tv_good_num"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="200"/>
+
+            <ImageButton
+                android:background="#00000000"
+                android:focusable="false"
+                android:id="@+id/ib_tv_save"
+                android:layout_height="28dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="3dp"
+                android:layout_width="28dp"
+                android:src="@mipmap/tv_collect_icon"/>
+
+            <TextView
+                style="@style/textStyleAdviserConsultantText"
+                android:id="@+id/tv_save_num"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/iv_answer"
+                android:layout_width="wrap_content"
+                android:text="200"/>
+
+            <TextView
+                style="@style/textStyleAdviserConsultantText"
+                android:id="@+id/tv_see_num"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_toRightOf="@+id/tv_save_num"
+                android:layout_width="wrap_content"
+                android:text="82，32313次观看"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="right|center_vertical"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_tv_avatar"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="30dp"
+                android:src="@mipmap/icon_loading_adviserimage"/>
+
+            <TextView
+                style="@style/textStyleAdviserConsultantText"
+                android:id="@+id/tv_name"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_width="wrap_content"
+                android:text="刘军"/>
+        </LinearLayout>
+    </RelativeLayout>
+    <!--相关推荐-->
+    <RelativeLayout
+        android:background="@color/colorWhite"
+        android:gravity="center_vertical"
+        android:layout_height="40dp"
+        android:layout_marginBottom="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent">
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:background="#00000000"
+                android:focusable="false"
+                android:layout_height="28dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="3dp"
+                android:layout_width="28dp"
+                android:src="@mipmap/tv_recommend_icon"/>
+
+            <TextView
+                style="@style/textStyleLayoutTitleText"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="相关推荐"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+    <!--其他视频列表-->
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical">
+
+        <ListView
+            android:background="@color/colorWhite"
+            android:divider="@color/colorBackgroudLight"
+            android:dividerHeight="1dp"
+            android:id="@+id/lv_play_recommend"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"/>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <win99.com.miaogu9.pull2refresh.PullToRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/refresh_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible">
+
+        <include layout="@layout/refresh_head"></include>
+
+        <win99.com.miaogu9.pull2refresh.PullableScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <!--头部广告-->
+                <win99.com.miaogu9.view.RollViewPager
+                    android:id="@+id/home_rollViewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp162"/>
+
+                <!--竖直滚动广告条-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp40"
+                    android:background="@color/colorWhite">
+
+                    <win99.com.miaogu9.library.VerticalBannerView
+                        android:id="@+id/banner_info"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        app:animDuration="500"
+                        app:gap="3000"/>
+
+                    <ImageView
+                        android:id="@+id/imageButtonMoreInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@mipmap/icon_newsmore"/>
+                </LinearLayout>
+
+                <!--中部股神说链接-->
+                <include layout="@layout/tab_middle"></include>
+                <!--投顾热评链接-->
+                <include layout="@layout/tab_third"></include>
+                <!--横拉的广告条效果-->
+                <win99.com.miaogu9.view.WrapRecyclerView
+                    android:id="@+id/home_recyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp140"/>
+                <!--底部特色活动-->
+                <include layout="@layout/tab_last"></include>
+            </LinearLayout>
+        </win99.com.miaogu9.pull2refresh.PullableScrollView>
+
+        <include layout="@layout/load_more"></include>
+
+
+    </win99.com.miaogu9.pull2refresh.PullToRefreshLayout>
+
+    <include layout="@layout/page_error"></include>
+</FrameLayout>

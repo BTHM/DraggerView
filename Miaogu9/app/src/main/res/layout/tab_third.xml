@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/home_hot_title"
+    android:layout_width="match_parent"
+    android:background="@color/colorWhite"
+    android:layout_marginTop="10dp"
+    android:layout_height="40dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:id="@+id/imageViewHot"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:src="@mipmap/home_hot_icon" />
+
+    <TextView
+        style="@style/textStyleHomeButtonTextTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="3dp"
+        android:layout_toRightOf="@+id/imageViewHot"
+        android:text="投顾热评" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:background="#fff"
+        android:src="@mipmap/indicator_icon" />
+</RelativeLayout>

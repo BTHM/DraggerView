@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="88dp"
+    android:layout_marginTop="1dp"
+    android:background="@color/colorWhite"
+    android:gravity="center_vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:id="@+id/home_button_tv"
+        android:layout_width="0dp"
+        android:layout_height="68dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:background="@mipmap/home_tv_button">
+
+        <TextView
+            android:id="@+id/gushenshuo"
+            style="@style/textStyleHomeButtonTextLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="11dp"
+            android:text="@string/tab_title1" />
+
+        <TextView
+            style="@style/textStyleHomeButtonTextSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/gushenshuo"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="3dp"
+            android:text="@string/tab_content1_1" />
+
+        <TextView
+            style="@style/textStyleHomeButtonTextSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/gushenshuo"
+            android:layout_marginRight="28dp"
+            android:layout_marginTop="3dp"
+            android:text="@string/tab_content1_2" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/home_button_securities"
+        android:layout_width="0dp"
+        android:layout_height="68dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:background="@mipmap/home_securities_button">
+
+        <TextView
+            android:id="@+id/quanshang"
+            style="@style/textStyleHomeButtonTextLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="11dp"
+            android:text="券商开户" />
+
+        <TextView
+            style="@style/textStyleHomeButtonTextSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/quanshang"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="11dp"
+            android:text="敬请期待" />
+
+        <TextView
+            style="@style/textStyleHomeButtonTextSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/quanshang"
+            android:layout_marginRight="28dp"
+            android:layout_marginTop="3dp"
+            android:text="开户豪礼"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+</LinearLayout>

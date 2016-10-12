@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/hotQuestion"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/adviser_hot_title"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/colorWhite">
+
+        <ImageView
+            android:id="@+id/imageViewHot"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:src="@mipmap/home_hot_icon"/>
+
+        <TextView
+            style="@style/textStyleHomeButtonTextTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="3dp"
+            android:layout_toRightOf="@+id/imageViewHot"
+            android:text="投顾热评"/>
+
+        <ImageView
+            android:id="@+id/imageButtonMoreAdviser"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:background="#fff"
+            android:src="@mipmap/indicator_icon"/>
+    </RelativeLayout>
+
+
+    <win99.com.miaogu9.library.VerticalBannerView
+        android:id="@+id/banner_hot_ask"
+        android:layout_width="match_parent"
+        android:layout_height="94dp"
+        android:layout_marginTop="0.5dp"
+        android:layout_weight="1"
+        android:background="@color/colorWhite"
+        app:animDuration="500"
+        app:gap="3000"/>
+
+</LinearLayout>

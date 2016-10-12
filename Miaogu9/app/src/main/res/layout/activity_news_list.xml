@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    tools:context="win99.com.miaogu9.ui.NewsListActivity">
+
+    <include layout="@layout/tab_toolbar"></include>
+    <win99.com.miaogu9.pull2refresh.PullToRefreshLayout
+        android:id="@+id/activity_news_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <win99.com.miaogu9.pull2refresh.PullableListView
+            android:id="@+id/newslist_listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></win99.com.miaogu9.pull2refresh.PullableListView>
+
+    </win99.com.miaogu9.pull2refresh.PullToRefreshLayout>
+</LinearLayout>

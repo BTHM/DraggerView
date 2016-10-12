@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_name"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.SetNameActivity">
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:background="@color/colorBackgroudLight"
+                  android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/layoutTopBar"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="#40a5c6"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/topBack"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginLeft="5dp"
+                android:background="#00000000"
+                android:src="@mipmap/icon_back"/>
+
+            <TextView
+                android:id="@+id/topTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="设置昵称"
+                android:textColor="@color/colorWhite"
+                android:textSize="18sp"/>
+
+            <Button
+                android:id="@+id/topSave"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:background="#00000000"
+                android:text="保存"
+                android:textColor="@color/colorWhite"
+                android:textSize="15sp"
+                android:visibility="visible"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:text="昵称最多8个汉字"
+                android:textColor="#757575"
+                android:textSize="13sp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layoutName"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/colorWhite">
+
+            <EditText
+                android:id="@+id/editTextName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:background="@null"
+                android:ems="10"
+                android:hint="我是昵称"
+                android:inputType="textPersonName"
+                android:textColor="@color/colorDarkGray"
+                android:textColorHint="#c0c0c0"
+                android:textSize="15sp"/>
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

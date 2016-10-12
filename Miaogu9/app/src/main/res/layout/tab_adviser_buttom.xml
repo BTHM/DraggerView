@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/layout_my_question"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:layout_marginTop="10dp"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:id="@+id/my_question"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/colorWhite">
+
+        <ImageView
+            android:id="@+id/imageViewFinance"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:src="@mipmap/questions_icon"/>
+
+        <TextView
+            style="@style/textStyleHomeButtonTextTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="3dp"
+            android:layout_toRightOf="@+id/imageViewFinance"
+            android:text="我的提问"/>
+
+        <ImageView
+            android:id="@+id/imageButtonMoreMyQuestion"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="5dp"
+            android:background="#fff"
+            android:src="@mipmap/indicator_icon"/>
+    </RelativeLayout>
+
+    <!--<com.miaogu8.app.android.library.VerticalBannerView-->
+    <!--android:id="@+id/banner_my_question"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:layout_marginTop="0.5dp"-->
+    <!--android:layout_weight="1"-->
+    <!--android:background="@color/colorWhite"-->
+    <!--app:animDuration="500"-->
+    <!--app:gap="3000" />-->
+    <RelativeLayout
+        android:id="@+id/nodata"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/imageViewNodata"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="false"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="81dp"
+            android:src="@mipmap/noaskhome"/>
+
+        <TextView
+            android:id="@+id/textViewNodata"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/imageViewNodata"
+            android:text="喵~你还没有发起任何提问"
+            android:textColor="@color/colorAskGray"/>
+
+
+    </RelativeLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:id="@+id/myAsk"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:layout_marginBottom="0.5dp"
+                  android:layout_marginTop="0.5dp"
+                  android:background="@color/colorWhite"
+                  android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/layoutMyAsk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/iv_ask"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:src="@mipmap/ask_icon"/>
+
+            <TextView
+                android:id="@+id/tv_ask_title"
+                style="@style/textStyleAdviserAskText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:ellipsize="end"
+                android:gravity="left|center_vertical"
+                android:maxLines="2"
+                android:text="光线传媒,可以持仓吗?"/>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/iv_bar"
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="29dp"
+            android:layout_marginTop="10dp"
+            android:background="#e4e4e4"/>
+
+        <LinearLayout
+            android:id="@+id/layoutAnswer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="18.5dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/iv_answer"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_below="@+id/iv_ask"
+                    android:layout_marginLeft="10dp"
+                    android:src="@mipmap/answer_icon"/>
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    style="@style/textStyleAdviserConsultantText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="李大霄"/>
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="11dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginRight="7dp"
+                    android:background="#5c7997">
+
+                </View>
+
+                <TextView
+                    android:id="@+id/tv_company"
+                    style="@style/textStyleAdviserConsultantText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/iv_answer"
+                    android:text="中信证券"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_answer"
+                style="@style/textStyleAdviserAnswerText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="29dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="3.5dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="短线可以考虑。短线可以考虑。短线可以考虑。短线可以考虑。短线可以考虑。短线可以考虑。"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutNoAnswer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/textStyleAdviserAnswerText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="29dp"
+                    android:layout_marginRight="20dp"
+                    android:text="暂无回答"
+                    android:textColor="#9b9b9b"/>
+
+                <Button
+                    android:id="@+id/buttonSimilarAnswer"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="60dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/button_rect_ring_code_enable"
+                    android:focusable="false"
+                    android:text="类似回答"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="11sp"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_time"
+            style="@style/textStyleAdviserTimeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="29dp"
+            android:layout_marginTop="3.5dp"
+            android:text="2016-07-27 04:39:46"/>
+
+    </LinearLayout>
+</LinearLayout>

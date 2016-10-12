@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/layoutRegister"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@id/layoutBannerBar"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <RelativeLayout
+        android:id="@+id/layoutPhoneReg"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="38dp"
+        android:layout_marginRight="38dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/colorWhite"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <ImageView
+            android:id="@+id/imageViewPhoneReg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/icon_normal_tel" />
+
+        <EditText
+            android:id="@+id/editTextPhoneReg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="30dp"
+            android:layout_toRightOf="@id/imageViewPhoneReg"
+            android:background="@null"
+            android:ems="10"
+            android:hint="输入11位手机号码"
+            android:inputType="number"
+            android:textColor="#4a4a4a"
+            android:textColorHint="#b4b4b4"
+            android:textSize="15sp" />
+
+        <ImageButton
+            android:id="@+id/imageButtonClearPhoneReg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="#00000000"
+            android:src="@mipmap/edit_del_icon" />
+
+        <View
+            android:id="@+id/phoneBarReg"
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorBarGray" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutCode"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/layoutPhoneReg"
+        android:layout_marginLeft="38dp"
+        android:layout_marginRight="38dp"
+        android:layout_marginTop="13.5dp"
+        android:background="@color/colorWhite">
+
+        <ImageView
+            android:id="@+id/imageViewCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/icon_normal_verification" />
+
+        <EditText
+            android:id="@+id/editTextCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="100dp"
+            android:layout_toRightOf="@id/imageViewCode"
+            android:background="@null"
+            android:ems="10"
+            android:hint="输入验证码"
+            android:inputType="number"
+            android:textColor="#4a4a4a"
+            android:textColorHint="#b4b4b4"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/buttonGetCode"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="70dp"
+            android:layout_height="28dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="false"
+            android:background="@drawable/button_rect_ring_code"
+            android:text="点击获取"
+            android:textColor="@color/colorBarGray"
+            android:textSize="13sp" />
+
+        <ImageButton
+            android:id="@+id/imageButtonClearCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/buttonGetCode"
+            android:background="#00000000"
+            android:src="@mipmap/edit_del_icon" />
+
+        <View
+            android:id="@+id/codeBar"
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorBarGray" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutPasswordReg"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/layoutCode"
+        android:layout_marginLeft="38dp"
+        android:layout_marginRight="38dp"
+        android:layout_marginTop="13.5dp"
+        android:background="@color/colorWhite">
+
+        <ImageView
+            android:id="@+id/imageViewPasswordReg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/icon_normal_code" />
+
+        <EditText
+            android:id="@+id/editTextPasswordReg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="30dp"
+            android:layout_toRightOf="@id/imageViewPasswordReg"
+            android:background="@null"
+            android:ems="10"
+            android:hint="输入密码"
+            android:inputType="textPassword"
+            android:textColor="#4a4a4a"
+            android:textColorHint="#b4b4b4"
+            android:textSize="15sp" />
+
+        <ImageButton
+            android:id="@+id/imageButtonSeePasswordReg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="#00000000"
+            android:src="@mipmap/icon_eyesee" />
+
+        <View
+            android:id="@+id/passwordBarReg"
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorBarGray" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/layoutTerm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layoutPasswordReg"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp">
+
+        <TextView
+            android:id="@+id/termText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="6dp"
+            android:text="注册代表您已同意"
+            android:textColor="#757575"
+            android:textSize="11sp" />
+
+        <Button
+            android:id="@+id/buttonTermReg"
+            android:layout_width="wrap_content"
+            android:layout_height="16.5dp"
+            android:layout_toRightOf="@id/termText"
+            android:background="#00000000"
+            android:text="《用户服务协议》"
+            android:textColor="@color/colorPrimary"
+            android:textSize="11sp" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/register"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/layoutPasswordReg"
+        android:layout_marginLeft="38dp"
+        android:layout_marginRight="38dp"
+        android:layout_marginTop="76dp"
+        android:background="@drawable/button_rect_ring"
+        android:text="注册"
+        android:textColor="@color/colorPrimary"
+        android:textSize="17sp" />
+
+    <RelativeLayout
+        android:id="@+id/layoutSafeReg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/register"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp">
+
+        <ImageView
+            android:id="@+id/imageViewSafeReg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/icon_safe" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="6dp"
+            android:layout_toRightOf="@id/imageViewSafeReg"
+            android:text="喵股不会在任何地方泄漏您的手机号"
+            android:textColor="#757575"
+            android:textSize="11sp" />
+
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="vertical">
+
+
+    <ImageView
+        android:id="@+id/iv_tv_thumb"
+        android:layout_width="match_parent"
+        android:layout_height="175dp"
+        android:background="#d8d8d8"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:id="@+id/tv_tv_title"
+        style="@style/textStyleAdviserAskText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="13dp"
+        android:ellipsize="end"
+        android:gravity="left|center_vertical"
+        android:maxLines="2"
+        android:text="蓝筹股今日操作技法刘军：建立减持预披露制新规近日公布" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/ib_tv_good"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_below="@+id/iv_ask"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="3dp"
+                android:background="#00000000"
+                android:focusable="false"
+                android:src="@mipmap/praise_icon" />
+
+            <TextView
+                android:id="@+id/tv_good_num"
+                style="@style/textStyleAdviserConsultantText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="200" />
+
+            <ImageButton
+                android:id="@+id/ib_tv_save"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="3dp"
+                android:background="#00000000"
+                android:focusable="false"
+                android:src="@mipmap/tv_collect_icon" />
+
+            <TextView
+                android:id="@+id/tv_save_num"
+                style="@style/textStyleAdviserConsultantText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/iv_answer"
+                android:text="200" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right|center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_tv_avatar"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/icon_loading_adviserimage" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                style="@style/textStyleAdviserConsultantText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="刘军" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

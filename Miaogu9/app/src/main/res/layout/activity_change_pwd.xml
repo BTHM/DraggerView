@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_name"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroudLight"
+    android:orientation="vertical"
+    tools:context=".ui.ChangePwdActivity">
+
+    <include layout="@layout/tab_toolbar"></include>
+
+    <RelativeLayout
+        android:id="@+id/layoutOldPassword"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/colorWhite">
+
+        <EditText
+            android:id="@+id/editTextOldPassword"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:background="@null"
+            android:ems="10"
+            android:hint="原登录密码，6-16位字符"
+            android:inputType="textPassword"
+            android:text=""
+            android:textColor="@color/colorDarkGray"
+            android:textColorHint="@color/colorLightGray"
+            android:textCursorDrawable="@null"
+            android:textSize="15sp"/>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutNewPassword"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/colorWhite">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="15dp"
+            android:background="#e4e4e4"/>
+
+        <EditText
+            android:id="@+id/editTextNewPassword"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:background="@null"
+            android:ems="10"
+            android:hint="设置新登录密码"
+            android:inputType="textPassword"
+            android:text=""
+            android:textColor="@color/colorDarkGray"
+            android:textColorHint="@color/colorLightGray"
+            android:textCursorDrawable="@null"
+            android:textSize="15sp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutCheckPassword"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@color/colorWhite">
+
+        <EditText
+            android:id="@+id/editTextCheckPassword"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:background="@null"
+            android:ems="10"
+            android:hint="重复新登录密码"
+            android:inputType="textPassword"
+            android:text=""
+            android:textColor="@color/colorDarkGray"
+            android:textColorHint="@color/colorLightGray"
+            android:textCursorDrawable="@null"
+            android:textSize="15sp"/>
+
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/done"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="13dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/btn_bg_logout"
+        android:text="完成"
+        android:clickable="false"
+        android:textColor="@color/colorWhite"
+        android:textSize="15sp"/>
+
+
+</LinearLayout>
+

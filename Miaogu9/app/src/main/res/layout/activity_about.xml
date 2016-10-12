@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_about"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.AboutActivity">
+
+
+    <include layout="@layout/tab_toolbar"></include>
+
+    <RelativeLayout
+        android:id="@+id/layoutAbout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignWithParentIfMissing="false"
+            android:layout_centerHorizontal="false"
+            android:layout_centerInParent="false"
+            android:layout_centerVertical="false"
+            android:layout_marginTop="80dp"
+            android:src="@mipmap/smallappicon4"/>
+
+        <TextView
+            android:id="@+id/appname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/icon"
+            android:layout_marginTop="7dp"
+            android:gravity="center_horizontal"
+            android:text="喵股"
+            android:textColor="#757575"
+            android:textSize="13.5sp"/>
+
+        <TextView
+            android:id="@+id/version"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/appname"
+            android:gravity="center_horizontal"
+            android:text="v1.0"
+            android:textColor="#757575"
+            android:textSize="13.5sp"/>
+
+        <TextView
+            android:id="@+id/wechat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/version"
+            android:layout_marginTop="29dp"
+            android:gravity="center_horizontal"
+            android:text="微信号 : yicai-club"
+            android:textColor="#757575"
+            android:textSize="13.5sp"/>
+
+
+        <TextView
+            android:id="@+id/company"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/companyen"
+            android:gravity="center_horizontal"
+            android:text="©上海红琛信息技术有限公司"
+            android:textColor="#757575"
+            android:textSize="10sp"/>
+
+        <TextView
+            android:id="@+id/companyen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="25dp"
+            android:gravity="center_horizontal"
+            android:text="Copyright Shanghai Hongchen"
+            android:textColor="#757575"
+            android:textSize="10sp"/>
+
+    </RelativeLayout>
+
+
+</LinearLayout>
+

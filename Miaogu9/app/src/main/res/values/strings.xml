@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">喵股09</string>
+    <string name="company_name">©上海红琛信息科技有限公司</string>
+    <string name="slogan">像 股 神 一 样 投 资</string>
+    <string name="main_tab_home">首页</string>
+    <string name="main_tab_adviser">投顾</string>
+    <string name="main_tab_tv">股神说</string>
+    <string name="main_tab_mine">我的</string>
+
+
+    <string name="scale_down_show_behavior">win99.com.miaogu9.behavior.ScaleDownShowBehavior</string>
+    <string name="scale_up_show_behavior">win99.com.miaogu9.behavior.ScaleUpShowBehavior</string>
+    <string name="swipe_dismiss_behavior">android.support.design.widget.SwipeDismissBehavior</string>
+    <string name="tab_title1">股神说</string>
+    <string name="tab_content1_1">每日准点</string>
+    <string name="tab">解盘荐股</string>
+    <string name="tab_content1_2">解盘推荐</string>
+    <string name="tougudating">投顾大厅</string>
+    <string name="yishizuixinshuju">已是最新数据了</string>
+    <string name="adviser_page_name">投顾大厅</string>
+    <string name="about_name">关于我们</string>
+    <string name="mine_name">个人资料</string>
+    <string name="newslist_name">资讯</string>
+
+</resources>
+

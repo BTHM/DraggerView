@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <win99.com.miaogu.widget.DraggerView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#FF3F"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/dragger_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="40sp"
+            android:text="我可以拖动我可以拖动"/>
+
+    </win99.com.miaogu.widget.DraggerView>
+</LinearLayout>
