@@ -34,6 +34,11 @@ public class MainActivity extends BaseActivity {
         mHomeFragment = new HomeFragment();
         mFragment = new DraggerFragment();
 
+        /*public boolean equals(Object obj) {
+            return (this == obj);
+        }*/
+        Object o = new Object();
+        o.equals(mFragment);
         getSupportFragmentManager()
                 .beginTransaction()
                 .add(R.id.main_fragment, mFragment)

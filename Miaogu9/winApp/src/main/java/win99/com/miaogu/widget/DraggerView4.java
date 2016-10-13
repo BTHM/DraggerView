@@ -1,14 +1,13 @@
 package win99.com.miaogu.widget;
 
-import android.animation.Animator;
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
 import android.content.Context;
-import android.os.SystemClock;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
+import android.view.animation.TranslateAnimation;
 import android.widget.LinearLayout;
-import android.widget.Scroller;
 
 import win99.com.miaogu.util.LogUtil;
 import win99.com.miaogu.util.WindowUtil;
@@ -19,7 +18,7 @@ import win99.com.miaogu.util.WindowUtil;
  * @ToDo ${TODO}
  */
 
-public class DraggerView extends LinearLayout {
+public class DraggerView4 extends LinearLayout {
 
 
 
@@ -28,34 +27,33 @@ public class DraggerView extends LinearLayout {
     private float mTotalDY;//移动总距离
     private int   mLocationX;//最初的view所在位置 相对屏幕
     private int   mLocationY;//最初的view所在位置 相对屏幕
-   
+
     private int mMetricsWidth;//设备屏幕的宽
     private int mMetricsHeight;//。。。高
     private float mEndPositionY;//Y轴终点
     private float mRawX;
     private float mRawY;
     private boolean isDismissAction;//是否是消失动作
-    private Scroller mScroller;//只用来进行数据的模拟，而不做任何滚动操作
 
 
-    public DraggerView(Context context) {
+    public DraggerView4(Context context) {
         this(context, null);
     }
 
-    public DraggerView(Context context, AttributeSet attrs) {
+    public DraggerView4(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public DraggerView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public DraggerView4(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         initView();
     }
 
     private void initView() {
-        mScroller = new Scroller(getContext());
+
         mMetricsWidth = WindowUtil.getMetricsWidth(getContext());
         mMetricsHeight = WindowUtil.getMetricsHeight(getContext());
-        mEndPositionY = mMetricsHeight * 0.4f;//向下平移最底部的位置
+        mEndPositionY = mMetricsHeight * 0.6f;//向下平移最底部的位置
         LogUtil.dd("mMetricsHeight="+mMetricsHeight);
     }
 
@@ -136,7 +134,7 @@ public class DraggerView extends LinearLayout {
                 float moveY = event.getRawY();
                 float dy = moveY - mRawY;
                 LogUtil.dd("moveY=" + moveY);
-               // LogUtil.dd("getScrollX()"+getScrollX()+"getScrollY()"+getScrollY());
+
                 int[] location=new int[2];
                 WindowUtil.getScreenPositon(this, location);
                 int locationY = location[1];// 再次测量view所在位置
@@ -150,8 +148,6 @@ public class DraggerView extends LinearLayout {
                     //是水平动作
                     float dx = moveX - mRawX;
                     scrollHorzontical(dx,location);
-                    mRawY = moveY;
-                    mRawX = moveX;
                     return true;
                 }
                 mTotalDY = mTotalDY + dy;
@@ -173,16 +169,7 @@ public class DraggerView extends LinearLayout {
             case MotionEvent.ACTION_UP:
                 //mTotalDY=0;
                 //抬起后横向移动判断标志 设置清除
-                //isDismissAction=false;
-
-                //判断手抬起后view所处的位置
-                int[] position=new int[2];
-                WindowUtil.getScreenPositon(this,position);
-                //scrollView(position);
-
-
-                //setView(position);
-
+                isDismissAction=false;
                 break;
             default:
         }
@@ -191,142 +178,70 @@ public class DraggerView extends LinearLayout {
 
     }
 
-
-    private void setViewPosition(int[] position){
-        int posY = position[1];
-        if (posY <= mEndPositionY*0.5f) {
-            while(mTotalDY > 1){
-                SystemClock.sleep(2);
-                LogUtil.dd("posY="+posY);
-                dispatchAction(mTotalDY-=posY/100);
-            }
-        }else{
-            while(mTotalDY <= mEndPositionY){
-                SystemClock.sleep(2);
-                LogUtil.dd("posY="+posY);
-                dispatchAction(mTotalDY += posY/100);
-            }
-        }
-    }
-
-    private void setView(int[] position) {
-        int posX = position[0];
-        int posY = position[1];
-
-        if (posY < mEndPositionY * 0.5f) {
-            ObjectAnimator translationY = ObjectAnimator.ofFloat(this, TRANSLATION_Y, 0,0, -(posY-mLocationY));
-            ObjectAnimator translationX = ObjectAnimator.ofFloat(this, TRANSLATION_X, 0,0, -posX);
-            //ObjectAnimator translationX = ObjectAnimator.ofFloat(this, SCALE_X, 0,0, -posX);
-
-
-            AnimatorSet animatorSet = new AnimatorSet();
-            animatorSet.setDuration(2000);
-            animatorSet.playTogether(translationY,translationX);
-            animatorSet.start();
-
-
-        }
-    }
-
-    /**
-     * @param position
-     */
-    private void scrollView(int[] position) {
-        int posX = position[0];
-        int posY = position[1];
-        LogUtil.dd("posY="+posY+"mEndPositionY* 0.5f="+mEndPositionY* 0.5f);
-        if (posY <= mEndPositionY* 0.5f) {
-            int dx=mLocationX - posX;
-            //int dy=mLocationY - posY;
-            mScroller.startScroll(posX,posY,dx,0, Math.abs(dx)*2);//开始模拟数据
-        }/*else{
-            int dx= (int) ((getWidth()*0.7f) - posX);
-            int dy= (int) (mEndPositionY - posY);
-            mScroller.startScroll(posX,posY,dx,dy, Math.abs(dx)*2);//开始模拟数据
-        }*/
-        invalidate();
-    }
-
-
-    //与invalidate进行配合使用的方法,invalidate执行一次，computeScroll就执行一次
-    @Override
-    public void computeScroll() {
-        if (mScroller.computeScrollOffset()) {
-            //获取当前的模拟的值，并且让界面滑动
-            int currX = mScroller.getCurrX();//获取当前正在模拟的x轴的值
-            //mScroller.getCurrX()
-            int currY = mScroller.getCurrY();
-            int[] position=new int[2];
-            WindowUtil.getScreenPositon(this,position);/**/
-            LogUtil.dd("currx:"+currX);
-            scrollTo(position[0],0);//将界面不断得进行移动到绝对的位置上，来实现，界面的缓慢滑动效果
-            invalidate();
-        }
-    }
-
-
     //水平移动View
     private void scrollHorzontical(float dx,int[] location) {
-//        LogUtil.dd("scrollHorzontical"+"dx="+dx);
-//        int posX = location[0];
-//        int posY = location[1];
+        LogUtil.dd("scrollHorzontical"+"dx="+dx);
+        int posX = location[0];
+        int posY = location[1];
         if (dx > 0) {//向右移动
-            //tween 动画 AlphaAnimation  实现不了 必须用属性动画
-
-            ObjectAnimator translationX = ObjectAnimator.ofFloat(this, "translationX", 0, this.getWidth());
-            ObjectAnimator alpha = ObjectAnimator.ofFloat(this, "Alpha",1.0f, 0.2f);
-            AnimatorSet animatorSet = new AnimatorSet();
-            animatorSet.playTogether(translationX,alpha);
-            animatorSet.setDuration(2000);
-            animatorSet.start();
-            animatorSet.addListener(new Animator.AnimatorListener() {
+            //tween 动画 AlphaAnimation
+            AlphaAnimation alpha = new AlphaAnimation(1.0f, 0.4f);
+            alpha.setDuration(6000);
+            alpha.setFillAfter(false);
+            TranslateAnimation translate = new TranslateAnimation(posX, mMetricsWidth+this.getWidth(), posY, posY);
+            translate.setDuration(6000);
+            translate.setFillAfter(false);
+            AnimationSet set = new AnimationSet(false);
+            set.addAnimation(alpha);
+            //set.addAnimation(translate);
+            this.startAnimation(set);
+            set.setAnimationListener(new Animation.AnimationListener() {
                 @Override
-                public void onAnimationStart(Animator animation) {
-                    //单次动画执行完毕才可进入
+                public void onAnimationStart(Animation animation) {
                     isDismissAction=false;
                 }
+
                 @Override
-                public void onAnimationEnd(Animator animation) {
-                }
-                @Override
-                public void onAnimationCancel(Animator animation) {
+                public void onAnimationEnd(Animation animation) {
+                    isDismissAction=true;
                 }
 
                 @Override
-                public void onAnimationRepeat(Animator animation) {
+                public void onAnimationRepeat(Animation animation) {
+
                 }
             });
-            LogUtil.dd("startAnimation"+"向右移动"+dx);
         }else{//向左移动
-            LogUtil.dd("-this.getWidth()"+this.getWidth());
+            AlphaAnimation alpha = new AlphaAnimation(1.0f, 0.2f);
+            //alpha.setDuration(2000);
+            //alpha.setFillAfter(true);
+             TranslateAnimation translate = new TranslateAnimation(0,-getWidth(), 0, 0);
+            //translate.setDuration(2000);
+            //translate.setFillAfter(true);
+            AnimationSet set = new AnimationSet(false);
+            set.setFillAfter(true);
+            set.setDuration(4000);
+            set.addAnimation(alpha);
+            set.addAnimation(translate);
+           // this.startAnimation(translate);
+            this.startAnimation(set);
 
-
-            ObjectAnimator translationX = ObjectAnimator.ofFloat(this, "translationX", 0, -this.getWidth());
-            ObjectAnimator alpha = ObjectAnimator.ofFloat(this, "Alpha",1.0f, 0.2f);
-            //tv2TranslateY.setStartDelay(2000);
-            AnimatorSet animatorSet = new AnimatorSet();
-            animatorSet.playTogether(translationX,alpha);
-            animatorSet.setDuration(2000);
-            animatorSet.start();
-            animatorSet.addListener(new Animator.AnimatorListener() {
+            translate.setAnimationListener(new Animation.AnimationListener() {
                 @Override
-                public void onAnimationStart(Animator animation) {
-                    //单次动画执行完毕才可进入
+                public void onAnimationStart(Animation animation) {
                     isDismissAction=false;
                 }
+
                 @Override
-                public void onAnimationEnd(Animator animation) {
+                public void onAnimationEnd(Animation animation) {
+                    //isDismissAction=true;
                 }
 
                 @Override
-                public void onAnimationCancel(Animator animation) {
-                }
+                public void onAnimationRepeat(Animation animation) {
 
-                @Override
-                public void onAnimationRepeat(Animator animation) {
                 }
             });
-
             LogUtil.dd("startAnimation"+"向左移动"+dx);
         }
     }
@@ -347,8 +262,8 @@ public class DraggerView extends LinearLayout {
         LogUtil.dd("mMetricsHeight=" + mMetricsHeight);
         LogUtil.dd("precent=" + precent);
         this.setTranslationY(evaluate(precent, 0.f, mEndPositionY));
-        this.setScaleX(evaluate(precent, 1.f, 0.2f));
-        this.setScaleY(evaluate(precent, 1.f, 0.3f));
+        this.setScaleX(evaluate(precent, 1.f, 0.5f));
+        this.setScaleY(evaluate(precent, 1.f, 0.5f));
         //缩小了多少就平移／2
         LogUtil.dd("mMetricsWidth"+mMetricsWidth);
         //LogUtil.dd("(1-this.getScaleX())*getWidth()*0.5f="+(1-this.getScaleX())*getWidth()*0.5f);
@@ -357,6 +272,7 @@ public class DraggerView extends LinearLayout {
         this.setTranslationX((1-this.getScaleX())*getWidth()*0.5f);
 
         //this.setFilterTouchesWhenObscured(false);
+
     }
 
     //估值计算方法
